@@ -1,0 +1,432 @@
+:root {
+  --header-bg-color: #61759e;
+  --footer-bg-color: #182443;
+  --dropnum-color: #637f92;
+  --title-color: #404f6c;
+}
+
+body {
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+p {
+  font-family: "Franklin Gothic Medium", Arial, sans-serif;
+}
+
+/*----------Menu Section----------*/
+
+nav {
+  position: relative;
+  display: flex;
+  height: 8vh;
+  width: 100%;
+  z-index: 3;
+}
+
+#nav-bg {
+  background-color: var(--header-bg-color);
+  position: fixed;
+  margin: auto;
+  padding: 1em;
+  width: 100%;
+  height: 6vh;
+  z-index: 1;
+  top: -12vh;
+  transition: top 0.3s;
+}
+
+#logo {
+  width: 43px;
+  height: 43px;
+  margin: auto auto auto 4em;
+}
+
+.mark-small{
+    display: none;
+}
+
+a {
+  color: white;
+}
+nav p {
+  text-align: right;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-style: italic;
+  color: white;
+  margin: 1.5em;
+}
+nav p a {
+  margin: 2em;
+}
+
+/*---------Parallax wrapper---------*/ 
+
+.wrapper {
+  position: absolute;
+  height: 105vh;
+  width: 100vw;
+  margin: -5em 0;
+  overflow-y: auto;
+  display: block;
+  background-color: var(--footer-bg-color);
+  perspective: 10px;
+}
+
+/*----------First Section----------*/
+
+header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.background {
+  background-image: url("mountainbackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateZ(-10px) scale(2);
+  z-index: 2;
+}
+
+.foreground {
+  background-image: url("mountainforeground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  transform: translateZ(-3px) scale(1.3);
+  z-index: 3;
+}
+
+/*----------Word Mark----------*/
+
+.mark {
+  position: relative;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  transform: translateZ(0px);
+  z-index: 4;
+  margin: 6em auto;
+}
+
+#los {
+  color: #4d4d4d;
+  margin: 1em 0 0 0;
+  font-size: 4em;
+}
+
+#mountains {
+  color: #404f6c;
+  margin-top: -0.3em;
+  font-size: 5em;
+  text-shadow: 0 0 2px white;
+}
+
+
+
+/*----------01. History---------*/
+
+#history {
+  position: relative;
+  grid-row-start: 2;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-image: url("historypeak.png");
+  background-size: cover;
+  padding: 0;
+  transform: translateZ(0px);
+  z-index: -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+article {
+  grid-column-start: 2;
+}
+
+.title {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 6.5em 0 0 5.25em;
+  color: var(--footer-bg-color);
+}
+
+.dropnum {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin: 0.25em 0 0 -.25em;
+  font-size: 15em;
+  color: var(--title-color);
+}
+
+#history p {
+  margin: -2em;
+  width: 100%;
+}
+
+
+
+/*----------02. Team---------*/
+
+#team > p {
+  margin: 0 0;
+  
+}
+
+#climb {
+  background-color: var(--header-bg-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+#team {
+  position: relative;
+  grid-row-start: 3;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-image: url("tab1.png");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  transform: translateZ(-0px) scale(1.1);
+  z-index: -1;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.schedule {
+  background-color: white;
+  opacity: 0.7;
+  position: relative;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin: auto;
+  padding: 1em;
+}
+
+.schedule-title {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.schedule p {
+  margin: auto;
+}
+
+#buttons {
+    width: 100vw;
+    background-color: #182443;
+}
+
+#mtn1 {
+    margin-left: 2em;
+}
+
+#mtn2 {
+    color: white;
+    background-color: #182443;
+}
+
+article button {
+    border: 0;
+    padding:1em;
+}
+
+/* Slideshow container */
+
+#dots {
+    display: block;
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#slideshow-bg {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  position: absolute;
+  background-color: var(--footer-bg-color);
+  opacity: 0.5;
+  margin: auto;
+  width: 100vw;
+  height: 75vh;
+}
+
+.slideshow-container {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  max-width: 1000px;
+  position: relative;
+  margin: 2em auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/*----------Footer Section----------*/
+footer {
+    position: relative;
+    color: white;
+    background-color: var(--footer-bg-color);
+    height: 25vh;
+}
+
+
+/*------------Media Queres------------*/
+
+@media (min-width: 1000px) {
+    div p {
+      grid-column-start: 2;
+    }
+  
+    #los {
+      font-size: 5em;
+    }
+  
+    #mountains {
+      font-size: 6em;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .mark {
+      grid-row-start: 1;
+      grid-column-start: 2;
+      z-index: 0;
+      transform: translateZ(-5px) scale(1.5);
+      margin: 1em 5em;
+    }
+    #los {
+      font-size: 6em;
+    }
+    #mountains {
+      font-size: 8em;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .mark {
+      transform: translateZ(-5px) scale(1.75); 
+    }
+    #los {
+        font-size: 8em;
+      }
+    #mountains {
+        font-size: 10em;
+      }
+    }
