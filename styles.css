@@ -21,11 +21,13 @@ p {
 /*----------Menu Section----------*/
 
 nav {
-  position: relative;
   display: flex;
-  height: 8vh;
-  width: 100%;
   z-index: 3;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-style: italic;
+  color: white;
 }
 
 #nav-bg {
@@ -33,7 +35,7 @@ nav {
   position: fixed;
   margin: auto;
   padding: 1em;
-  width: 100%;
+  width: 100vw;
   height: 6vh;
   z-index: 1;
   top: -12vh;
@@ -43,36 +45,47 @@ nav {
 #logo {
   width: 43px;
   height: 43px;
-  margin: auto auto auto 4em;
+  margin: 1em 2em 0 0;
 }
 
-.mark-small{
-    display: none;
+.mark-small {
+  display: flex;
+}
+.mark-small > h1:nth-child(2) {
+  font-size: 1.1em;
+  color: #4d4d4d;
+  margin: 0.9em 0 0 0;
+}
+.mark-small > h1:nth-child(3) {
+  font-size: 1.5em;
+  color: #404f6c;
+  margin: 1.25em 0 0 -4.35em;
+}
+.mark-small > h1 {
+  text-transform: uppercase;
+  display: block;
+  left: 5em;
 }
 
 a {
   color: white;
 }
-nav p {
-  text-align: right;
-  width: fit-content;
-  text-transform: uppercase;
-  font-weight: bolder;
-  font-style: italic;
-  color: white;
-  margin: 1.5em;
-}
-nav p a {
+
+nav a {
   margin: 2em;
 }
 
-/*---------Parallax wrapper---------*/ 
+.nav2 {
+    
+}
+
+/*---------Parallax wrapper---------*/
 
 .wrapper {
   position: absolute;
-  height: 105vh;
+  height: 100vh;
   width: 100vw;
-  margin: -5em 0;
+  margin: 0;
   overflow-y: auto;
   display: block;
   background-color: var(--footer-bg-color);
@@ -91,6 +104,22 @@ header {
   height: 100%;
   transform-style: preserve-3d;
   z-index: -1;
+}
+
+.wrapper > header:nth-child(1) > a:nth-child(1) {
+  grid-column-start: 2;
+}
+
+.wrapper > header:nth-child(1) > a:nth-child(2) {
+  grid-column-start: 3;
+}
+
+header a {
+  position: relative;
+  display: inline-block;
+  grid-row-start: 1;
+  top: -12em;
+  text-align: right;
 }
 
 .background,
@@ -113,9 +142,7 @@ header {
   background-image: url("mountainforeground.png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100vh;
-  transform: translateZ(-3px) scale(1.3);
+  transform: translateZ(-5px) scale(1.5);
   z-index: 3;
 }
 
@@ -146,8 +173,6 @@ header {
   text-shadow: 0 0 2px white;
 }
 
-
-
 /*----------01. History---------*/
 
 #history {
@@ -166,46 +191,44 @@ header {
   grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-article {
-  grid-column-start: 2;
-}
-
 .title {
   position: absolute;
   text-transform: uppercase;
   font-size: 2em;
-  margin: 6.5em 0 0 5.25em;
+  margin: 6em 0 0 8em;
   color: var(--footer-bg-color);
 }
 
 .dropnum {
   grid-column-start: 1;
   grid-row-start: 1;
-  margin: 0.25em 0 0 -.25em;
+  margin: 0.15em 0 0 0.1em;
   font-size: 15em;
   color: var(--title-color);
 }
 
 #history p {
-  margin: -2em;
-  width: 100%;
+  margin: -1em 2em;
+  width: 80vw;
 }
-
-
 
 /*----------02. Team---------*/
 
-#team > p {
-  margin: 0 0;
-  
-}
-
 #climb {
   background-color: var(--header-bg-color);
+}
+
+#climb > article {
+  margin-top: 2em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+#climb > article > p {
+  margin: 0 2em 2em;
+  width: 80vw;
+  grid-row-start: 2;
+}
 
 #team {
   position: relative;
@@ -228,10 +251,10 @@ article {
   background-color: white;
   opacity: 0.7;
   position: relative;
-  grid-row-start: 2;
+  grid-row-start: 1;
   grid-column-start: 1;
   grid-column-end: 4;
-  margin: auto;
+  margin: 4em auto;
   padding: 1em;
 }
 
@@ -245,31 +268,31 @@ article {
 }
 
 #buttons {
-    width: 100vw;
-    background-color: #182443;
+  width: 100vw;
+  background-color: #182443;
+  grid-row-start: 3;
 }
 
 #mtn1 {
-    margin-left: 2em;
+  margin-left: 2em;
 }
 
 #mtn2 {
-    color: white;
-    background-color: #182443;
+  color: white;
+  background-color: #182443;
 }
 
 article button {
-    border: 0;
-    padding:1em;
+  border: 0;
+  padding: 1em;
 }
 
 /* Slideshow container */
 
 #dots {
-    display: block;
-    grid-row-start: 4;
-    grid-column-start: 1;
-    grid-column-end: 5;
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
 
 #slideshow-bg {
@@ -286,7 +309,7 @@ article button {
 
 .slideshow-container {
   grid-row-start: 3;
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-column-end: 4;
   max-width: 1000px;
   position: relative;
@@ -377,56 +400,54 @@ article button {
   }
 }
 
-
 /*----------Footer Section----------*/
 footer {
-    position: relative;
-    color: white;
-    background-color: var(--footer-bg-color);
-    height: 25vh;
+  position: relative;
+  color: white;
+  background-color: var(--footer-bg-color);
+  height: 25vh;
 }
-
 
 /*------------Media Queres------------*/
 
 @media (min-width: 1000px) {
-    div p {
-      grid-column-start: 2;
-    }
-  
-    #los {
-      font-size: 5em;
-    }
-  
-    #mountains {
-      font-size: 6em;
-    }
-  }
-  
-  @media (min-width: 1400px) {
-    .mark {
-      grid-row-start: 1;
-      grid-column-start: 2;
-      z-index: 0;
-      transform: translateZ(-5px) scale(1.5);
-      margin: 1em 5em;
-    }
-    #los {
-      font-size: 6em;
-    }
-    #mountains {
-      font-size: 8em;
-    }
+  div p {
+    grid-column-start: 2;
   }
 
-  @media (min-width: 1600px) {
-    .mark {
-      transform: translateZ(-5px) scale(1.75); 
-    }
-    #los {
-        font-size: 8em;
-      }
-    #mountains {
-        font-size: 10em;
-      }
-    }
+  #los {
+    font-size: 5em;
+  }
+
+  #mountains {
+    font-size: 6em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .mark {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    z-index: 0;
+    transform: translateZ(-5px) scale(1.5);
+    margin: 1em 5em;
+  }
+  #los {
+    font-size: 6em;
+  }
+  #mountains {
+    font-size: 8em;
+  }
+}
+
+@media (min-width: 1600px) {
+  .mark {
+    transform: translateZ(-5px) scale(1.75);
+  }
+  #los {
+    font-size: 8em;
+  }
+  #mountains {
+    font-size: 10em;
+  }
+}
